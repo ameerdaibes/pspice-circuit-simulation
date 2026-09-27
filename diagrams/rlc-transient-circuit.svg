@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1250" height="620" viewBox="0 0 1250 620">
+<style>
+  text{font-family:Arial,Helvetica,sans-serif;fill:#111}
+  .wire{stroke:#111;stroke-width:4;fill:none}
+  .comp{stroke:#111;stroke-width:4;fill:white}
+  .label{font-size:24px;font-weight:600}
+  .small{font-size:21px}
+  .node{fill:#111}
+</style>
+<rect width="100%" height="100%" fill="white"/>
+<text x="625" y="42" text-anchor="middle" class="label">Problem 2 — Switched RLC Transient Circuit</text>
+
+<!-- ground bus -->
+<path class="wire" d="M120 500 H1110"/>
+
+<!-- left current source -->
+<path class="wire" d="M120 190 V270"/>
+<circle class="comp" cx="120" cy="330" r="40"/>
+<path class="wire" d="M120 370 V500"/>
+<path class="wire" d="M120 350 V310"/>
+<path class="wire" d="M120 310 l-10 16 M120 310 l10 16"/>
+<text x="48" y="335" class="small">1.5 A</text>
+
+<!-- top wire to node -->
+<path class="wire" d="M120 190 H250"/>
+
+<!-- R1 vertical -->
+<path class="wire" d="M250 190 V255"/>
+<path class="wire" d="M250 255 l-18 18 l36 18 l-36 18 l36 18 l-36 18 l18 18 V500"/>
+<text x="195" y="350" class="small">R1 = 7 Ω</text>
+
+<!-- series R3 -->
+<path class="wire" d="M250 190 H330"/>
+<path class="wire" d="M330 190 l18 -18 l18 36 l18 -36 l18 36 l18 -36 l18 36 l18 -18 H500"/>
+<text x="415" y="150" text-anchor="middle" class="small">8 Ω</text>
+
+<!-- R2 vertical -->
+<path class="wire" d="M500 190 V255"/>
+<path class="wire" d="M500 255 l-18 18 l36 18 l-36 18 l36 18 l-36 18 l18 18 V500"/>
+<text x="535" y="350" class="small">R2 = 17 Ω</text>
+
+<!-- first inductor 0.125H -->
+<path class="wire" d="M500 190 H560"/>
+<path class="wire" d="M560 190
+ C570 160 590 160 600 190
+ C610 160 630 160 640 190
+ C650 160 670 160 680 190
+ C690 160 710 160 720 190"/>
+<text x="640" y="145" text-anchor="middle" class="small">L = 0.125 H</text>
+<text x="620" y="225" class="small">iL(t) →</text>
+
+<!-- switch -->
+<path class="wire" d="M720 190 H770"/>
+<circle class="node" cx="770" cy="190" r="7"/>
+<circle class="node" cx="850" cy="190" r="7"/>
+<path class="wire" d="M770 190 L830 155"/>
+<text x="810" y="125" text-anchor="middle" class="small">closes at t = 0.3 s</text>
+
+<!-- capacitor -->
+<path class="wire" d="M850 190 H900"/>
+<line class="wire" x1="900" y1="155" x2="900" y2="225"/>
+<line class="wire" x1="930" y1="155" x2="930" y2="225"/>
+<path class="wire" d="M930 190 H970"/>
+<text x="915" y="130" text-anchor="middle" class="small">C3 = 60 mF</text>
+<text x="910" y="255" text-anchor="middle" class="small">vC(t)</text>
+
+<!-- L4 -->
+<path class="wire" d="M970 190
+ C980 160 1000 160 1010 190
+ C1020 160 1040 160 1050 190
+ C1060 160 1080 160 1090 190"/>
+<text x="1035" y="145" text-anchor="middle" class="small">L4 = 0.2 H</text>
+
+<!-- R4 vertical -->
+<path class="wire" d="M1090 190 H1110 V255"/>
+<path class="wire" d="M1110 255 l-18 18 l36 18 l-36 18 l36 18 l-36 18 l18 18 V500"/>
+<text x="1150" y="350" class="small">R4 = 1 Ω</text>
+<text x="1140" y="285" class="small">+</text>
+<text x="1140" y="420" class="small">−</text>
+<text x="1165" y="355" class="small">v₀(t)</text>
+<text x="1060" y="245" class="small">i₀(t) →</text>
+
+<!-- nodes -->
+<circle class="node" cx="250" cy="190" r="7"/><circle class="node" cx="500" cy="190" r="7"/>
+</svg>
