@@ -1,0 +1,22 @@
+# PSpice / OrCAD generated output
+*.out
+*.dat
+*.prb
+*.mcs
+*.als
+*.sim
+*.stl
+*.tmp
+*.log
+*.opj
+*.opj.lock
+*.dsn.lock
+
+# Generic generated folders
+simulation/
+output/
+temp/
+
+# OS metadata
+.DS_Store
+Thumbs.db
