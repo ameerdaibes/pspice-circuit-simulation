@@ -1,0 +1,21 @@
+* Problem 1 - DC Steady-State Circuit
+* Reconstructed from the ENEE2306 PSpice assignment report.
+* Values used in the submitted simulation:
+* R1=7k, R2=7k, R3=6k, R4=5k, center resistor=2k
+* Vs1=7V, current sources=2mA and 6mA
+
+I1 0 NLEFT DC 2mA
+I2 NTOP NLEFT DC 6mA
+
+R4 NTOP NRIGHT 5k
+R1 NLEFT NRIGHT 7k
+R3 NLEFT NCENTER 6k
+R0 NCENTER 0 2k
+R2 NRIGHT 0 7k
+
+* Positive terminal of Vs1 is on NRIGHT
+V1 NRIGHT NCENTER DC 7
+
+.OP
+.PROBE V(NLEFT) V(NRIGHT) V(NCENTER) I(R1) I(R2) I(R3) I(R0) I(V1)
+.END
