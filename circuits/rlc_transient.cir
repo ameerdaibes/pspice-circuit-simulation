@@ -1,0 +1,24 @@
+* Problem 2 - Switched RLC Transient Circuit
+* Reconstructed from the ENEE2306 PSpice assignment report.
+* Switch closes at t = 0.3 s.
+
+I1 0 N1 DC 1.5A
+
+R1 N1 0 7
+R3 N1 N2 8
+R2 N2 0 17
+
+L1 N2 N3 0.125
+
+* Idealized voltage-controlled switch
+VCTRL CTRL 0 PULSE(0 5 0.3 1u 1u 10 20)
+S1 N3 N4 CTRL 0 SWMOD
+.MODEL SWMOD SW(RON=1m ROFF=1G VT=2.5 VH=0)
+
+C3 N4 N5 60m IC=0
+L4 N5 N6 0.2 IC=0
+R4 N6 0 1
+
+.TRAN 1m 2
+.PROBE V(N4,N5) I(L1) V(N6)
+.END
